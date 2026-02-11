@@ -1,5 +1,11 @@
 {
-  "buildCommand": "cd managed-chatkit && npm run frontend:build",
+  "buildCommand": "npm install && cd managed-chatkit && npm run frontend:build",
   "outputDirectory": "managed-chatkit/frontend/dist",
-  "installCommand": "cd managed-chatkit && npm install && npm --prefix frontend install"
+  "installCommand": "npm install && cd managed-chatkit && npm install && npm --prefix frontend install",
+  "functions": {
+    "api/**/*.js": {
+      "memory": 512,
+      "maxDuration": 10
+    }
+  }
 }
