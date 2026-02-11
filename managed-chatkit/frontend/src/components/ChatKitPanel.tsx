@@ -61,20 +61,24 @@ export function ChatKitPanel() {
       greeting: "Quel est le nom de ton app?",
       prompts: [
         {
+          label: "🚀 Commencer!",
           prompt:
-            "🚀 Commencer! Je veux créer une application web. Aide-moi à générer un cahier des charges technique complet et détaillé prêt pour Bolt ou Lovable.",
+            "Je veux créer une application web. Aide-moi à générer un cahier des charges technique complet et détaillé prêt pour Bolt ou Lovable.",
         },
         {
+          label: "🛍️ E-commerce",
           prompt:
-            "🛍️ E-commerce: Je veux créer une plateforme e-commerce. Génère-moi un cahier des charges complet avec tous les détails techniques pour construire une boutique en ligne moderne.",
+            "Je veux créer une plateforme e-commerce. Génère-moi un cahier des charges complet avec tous les détails techniques pour construire une boutique en ligne moderne.",
         },
         {
+          label: "📱 SaaS",
           prompt:
-            "📱 SaaS: Je développe une application SaaS. Aide-moi à créer un cahier des charges technique détaillé pour une solution cloud.",
+            "Je développe une application SaaS. Aide-moi à créer un cahier des charges technique détaillé pour une solution cloud.",
         },
         {
+          label: "📊 Tableau de bord",
           prompt:
-            "📊 Tableau de bord: Je veux un tableau de bord analytique. Génère les spécifications techniques pour un dashboard avec visualisations de données.",
+            "Je veux un tableau de bord analytique. Génère les spécifications techniques pour un dashboard avec visualisations de données.",
         },
       ],
     },
