@@ -65,21 +65,6 @@ export function ChatKitPanel() {
           prompt:
             "Je veux créer une application web. Aide-moi à générer un cahier des charges technique complet et détaillé prêt pour Bolt ou Lovable.",
         },
-        {
-          label: "🛍️ E-commerce",
-          prompt:
-            "Je veux créer une plateforme e-commerce. Génère-moi un cahier des charges complet avec tous les détails techniques pour construire une boutique en ligne moderne.",
-        },
-        {
-          label: "📱 SaaS",
-          prompt:
-            "Je développe une application SaaS. Aide-moi à créer un cahier des charges technique détaillé pour une solution cloud.",
-        },
-        {
-          label: "📊 Tableau de bord",
-          prompt:
-            "Je veux un tableau de bord analytique. Génère les spécifications techniques pour un dashboard avec visualisations de données.",
-        },
       ],
     },
   };
