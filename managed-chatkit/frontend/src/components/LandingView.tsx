@@ -14,13 +14,11 @@ export function LandingView({ onStart }: LandingViewProps) {
       <div className="relative z-10 flex flex-col items-center gap-8 max-w-2xl">
         {/* Logo */}
         <div className="animate-fade-in">
-          <div className="flex items-center justify-center w-24 h-24 rounded-full border-2 border-gray-700 bg-gray-800/50 backdrop-blur-sm hover:border-gray-600 transition-colors">
-            <img
-              src="https://res.cloudinary.com/dzxwhfhkx/image/upload/v1750696690/iqlogo_ihk3s9.webp"
-              alt="IQ Project"
-              className="w-16 h-16"
-            />
-          </div>
+          <img
+            src="https://res.cloudinary.com/dzxwhfhkx/image/upload/v1750696690/iqlogo_ihk3s9.webp"
+            alt="IQ Project"
+            className="h-20 w-auto object-contain"
+          />
         </div>
 
         {/* Title */}
