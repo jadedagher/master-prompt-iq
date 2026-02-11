@@ -39,3 +39,9 @@ yarn-error.log*g
 # typescript
 *.tsbuildinfog
 /backend/.ruff_cache
+.vercel
+.env*.local
+
+# Ignore all node_modules
+node_modules/
+

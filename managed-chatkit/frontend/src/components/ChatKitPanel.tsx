@@ -38,7 +38,7 @@ export function ChatKitPanel() {
       attachments: {
         enabled: true,
         maxCount: 10,
-        maxSize: 512, // Limited by ChatKit API - 512 bytes max
+        maxSize: 512 * 1024 * 1024, // 512 MB max
       },
     },
     startScreen: {
