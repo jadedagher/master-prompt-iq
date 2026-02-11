@@ -62,6 +62,7 @@ export default async function handler(req, res) {
         chatkit_configuration: {
           file_upload: {
             enabled: true,
+            max_file_size: 512000,
           },
         },
       }),
