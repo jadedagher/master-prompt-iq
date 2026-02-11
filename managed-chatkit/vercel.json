@@ -1,5 +1,8 @@
 {
-  "buildCommand": "npm run frontend:build",
-  "outputDirectory": "./frontend/dist",
-  "installCommand": "npm install && npm --prefix frontend install"
+  "buildCommand": "cd managed-chatkit && npm run frontend:build",
+  "outputDirectory": "managed-chatkit/frontend/dist",
+  "installCommand": "cd managed-chatkit && npm install && npm --prefix frontend install",
+  "roots": [
+    "managed-chatkit"
+  ]
 }
