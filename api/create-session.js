@@ -9,8 +9,12 @@ const SESSION_COOKIE_NAME = 'chatkit_session_id';
 const SESSION_COOKIE_MAX_AGE = 60 * 60 * 24 * 30; // 30 days
 
 export default async function handler(req, res) {
+  console.log('🚀 [CREATE-SESSION] Request received');
+  console.log('📋 [CREATE-SESSION] Method:', req.method);
+
   // Only allow POST requests
   if (req.method !== 'POST') {
+    console.log('❌ [CREATE-SESSION] Invalid method:', req.method);
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
@@ -65,15 +69,26 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
+    console.log('📥 [CREATE-SESSION] OpenAI Response Status:', response.status);
+    console.log('📥 [CREATE-SESSION] File Upload Config:', JSON.stringify(data.chatkit_configuration?.file_upload, null, 2));
+
     if (!response.ok) {
       const errorMessage = data?.error || response.statusText || 'Failed to create session';
+      console.log('❌ [CREATE-SESSION] API Error:', errorMessage);
       return res.status(response.status).json({ error: errorMessage });
     }
 
     const clientSecret = data.client_secret;
     const expiresAfter = data.expires_after;
+    const fileUploadConfig = data.chatkit_configuration?.file_upload;
+
+    console.log('✅ [CREATE-SESSION] Session created successfully');
+    console.log('📊 [CREATE-SESSION] File upload max_size:', fileUploadConfig?.max_file_size, 'bytes');
+    console.log('📊 [CREATE-SESSION] File upload enabled:', fileUploadConfig?.enabled);
+    console.log('📊 [CREATE-SESSION] Max files:', fileUploadConfig?.max_files);
 
     if (!clientSecret) {
+      console.log('❌ [CREATE-SESSION] Missing client secret in response');
       return res.status(502).json({ error: 'Missing client secret in response' });
     }
 
