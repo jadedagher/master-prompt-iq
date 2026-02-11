@@ -44,7 +44,7 @@ export default async function handler(req, res) {
     const userId = existingSessionId || uuidv4();
     const setCookie = !existingSessionId;
 
-    // Call OpenAI ChatKit API with file upload enabled
+    // Call OpenAI ChatKit API
     const response = await fetch(`${CHATKIT_API_BASE}/v1/chatkit/sessions`, {
       method: 'POST',
       headers: {
@@ -55,13 +55,6 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         workflow: { id: finalWorkflowId },
         user: userId,
-        chatkit_configuration: {
-          file_upload: {
-            enabled: true,
-            max_file_size: 10485760, // 10MB
-            max_files: 5,
-          },
-        },
       }),
     });
 
