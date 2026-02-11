@@ -1,0 +1,8 @@
+{
+  "name": "openai-chatkit-starter-app",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
+}
