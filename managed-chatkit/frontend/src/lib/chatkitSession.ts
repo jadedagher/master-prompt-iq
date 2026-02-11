@@ -9,14 +9,23 @@ export const workflowId = (() => {
   return id;
 })();
 
+const getApiEndpoint = (): string => {
+  const backendUrl = readEnvString(import.meta.env.VITE_BACKEND_URL);
+  if (backendUrl) {
+    return `${backendUrl}/api/create-session`;
+  }
+  return "/api/create-session";
+};
+
 export function createClientSecretFetcher(
   workflow: string,
-  endpoint = "/api/create-session"
+  endpoint?: string
 ) {
+  const finalEndpoint = endpoint || getApiEndpoint();
   return async (currentSecret: string | null) => {
     if (currentSecret) return currentSecret;
 
-    const response = await fetch(endpoint, {
+    const response = await fetch(finalEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ workflow: { id: workflow } }),
