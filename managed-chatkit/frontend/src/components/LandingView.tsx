@@ -24,11 +24,11 @@ export function LandingView({ onStart }: LandingViewProps) {
         {/* Title */}
         <div className="animate-fade-in text-center space-y-2" style={{ animationDelay: "0.1s" }}>
           <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight">
-            IQ Project
-            <br />
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Master prompt
             </span>
+            <br />
+            builder
           </h1>
         </div>
 
