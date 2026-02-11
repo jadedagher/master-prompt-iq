@@ -58,7 +58,7 @@ export function ChatKitPanel() {
       },
     },
     startScreen: {
-      greeting: "Quel est le nom de ton app?",
+      greeting: "Appuie sur commencer!  ⬇",
       prompts: [
         {
           label: "🚀 Commencer!",
@@ -72,11 +72,22 @@ export function ChatKitPanel() {
   const chatkit = useChatKit(options);
 
   return (
-    <div className="flex h-[90vh] w-full rounded-2xl bg-white shadow-sm transition-colors dark:bg-slate-900 overflow-hidden">
+    <div className="flex h-[90vh] w-full flex-col rounded-2xl bg-white shadow-sm transition-colors dark:bg-slate-900 overflow-hidden">
       {!started ? (
         <LandingView onStart={() => setStarted(true)} />
       ) : (
-        <ChatKit control={chatkit.control} className="h-full w-full" />
+        <>
+          <div className="flex items-center justify-center px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900">
+            <img
+              src="https://res.cloudinary.com/dzxwhfhkx/image/upload/v1750696690/iqlogo_ihk3s9.webp"
+              alt="IQ Project"
+              className="h-10 w-auto object-contain"
+            />
+          </div>
+          <div className="flex-1 overflow-hidden">
+            <ChatKit control={chatkit.control} className="h-full w-full" />
+          </div>
+        </>
       )}
     </div>
   );
