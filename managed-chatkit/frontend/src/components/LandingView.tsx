@@ -38,7 +38,7 @@ export function LandingView({ onStart }: LandingViewProps) {
           className="animate-fade-up flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors duration-200"
           style={{ animationDelay: "0.16s" }}
         >
-          par IQ Education
+          par IQ Project
           <svg
             className="w-3.5 h-3.5"
             fill="none"

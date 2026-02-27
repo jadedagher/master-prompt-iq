@@ -17,13 +17,17 @@ export function ChatKitPanel() {
       getClientSecret,
     },
     theme: {
-      colorScheme: "light",
+      colorScheme: "dark",
       radius: "pill",
       density: "normal",
       color: {
         surface: {
-          background: "#ffffff",
-          foreground: "#ffffff",
+          background: "#141416",
+          foreground: "#1a1a1e",
+        },
+        accent: {
+          primary: "#e8762d",
+          level: 2,
         },
       },
       typography: {
