@@ -70,7 +70,7 @@ export function LandingView({ onStart }: LandingViewProps) {
           className="animate-fade-up text-center text-sm leading-relaxed text-muted max-w-sm"
           style={{ animationDelay: "0.32s" }}
         >
-          Generez des cahiers des charges techniques complets, prets a l'emploi
+          Générez des cahiers des charges techniques complets, prêts à l'emploi
           pour Bolt ou Lovable.
         </p>
 
