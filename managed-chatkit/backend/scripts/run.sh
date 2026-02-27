@@ -9,9 +9,11 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 cd "$PROJECT_ROOT"
 
+PYTHON="${PYTHON:-$(command -v python3.13 || command -v python3)}"
+
 if [ ! -d ".venv" ]; then
   echo "Creating virtual env in $PROJECT_ROOT/.venv ..."
-  python3 -m venv .venv
+  "$PYTHON" -m venv .venv
 fi
 
 source .venv/bin/activate

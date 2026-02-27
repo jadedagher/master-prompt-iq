@@ -29,25 +29,25 @@ export function ChatKitPanel() {
       typography: {
         baseSize: 16,
         fontFamily:
-          'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif',
+          '"DM Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
         fontFamilyMono:
-          'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace',
+          'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
       },
     },
     composer: {
       attachments: {
         enabled: true,
         maxCount: 10,
-        maxSize: 512 * 1024 * 1024, // 512 MB max
+        maxSize: 512 * 1024 * 1024,
       },
     },
     startScreen: {
-      greeting: "Appuie sur commencer!  ⬇",
+      greeting: "Appuie sur commencer!  \u2B07",
       prompts: [
         {
-          label: "🚀 Commencer!",
+          label: "\uD83D\uDE80 Commencer!",
           prompt:
-            "Je veux créer une application web. Aide-moi à générer un cahier des charges technique complet et détaillé prêt pour Bolt ou Lovable.",
+            "Je veux cr\u00E9er une application web. Aide-moi \u00E0 g\u00E9n\u00E9rer un cahier des charges technique complet et d\u00E9taill\u00E9 pr\u00EAt pour Bolt ou Lovable.",
         },
       ],
     },
@@ -56,16 +56,16 @@ export function ChatKitPanel() {
   const chatkit = useChatKit(options);
 
   return (
-    <div className="flex h-[90vh] w-full flex-col rounded-2xl bg-white shadow-sm transition-colors dark:bg-slate-900 overflow-hidden">
+    <div className="flex h-[90vh] w-full flex-col rounded-2xl border border-border-subtle bg-surface shadow-2xl shadow-black/20 overflow-hidden">
       {!started ? (
         <LandingView onStart={() => setStarted(true)} />
       ) : (
         <>
-          <div className="flex items-center justify-center px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900">
+          <div className="flex items-center justify-center px-6 py-3.5 border-b border-border-subtle bg-background">
             <img
               src="https://res.cloudinary.com/dzxwhfhkx/image/upload/v1750696690/iqlogo_ihk3s9.webp"
               alt="IQ Project"
-              className="h-10 w-auto object-contain"
+              className="h-8 w-auto object-contain"
             />
           </div>
           <div className="flex-1 overflow-hidden">
